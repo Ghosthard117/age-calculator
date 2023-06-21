@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --gray: #dddddc;
+  --light-gray: #f0f0f0;
+  --orange: #e08f2c;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--light-gray);
+  font-family: 'Poppins', sans-serif;
+}
+
+/* container */
+.container {
+  background-color: #fff;
+  padding: 3rem;
+  border-radius: 1rem 1rem 5rem 1rem;
+  width: 100%;
+  min-width: 468px;
+  max-width: 840px;
+}
+
+/* input */
+.input-form {
+  display: grid;
+  column-gap: 2rem;
+  grid-template-columns: repeat(3, 160px);
+}
+
+.input-form__box {
+  color: var(--gray);
+}
+
+.input-form__box__title {
+  font-weight: bold;
+  margin: 0;
+}
+
+.input-form__box__input {
+  border-color: var(--light-gray);
+  border-radius: 7px;
+  font-size: 28px;
+  font-weight: bold;
+  padding: 1rem;
+  width: 100%;
+  margin: 8px 0;
+}
+
+.input-form__box__input:focus {
+  outline: none;
+  border-color: var(--orange);
+}
+
+.input-form__box--error {
+  color: #fd5050;
+}
+
+.input-form__box__error-message {
+  font-style: italic;
+  display: none;
+}
+
+.input-form__box--error .input-form__box__input {
+  border-color: #fd5050;
+}
+
+.input-form__box--error .input-form__box__error-message {
+  display: block;
+}
+
+/* separator */
+.separator {
+  position: relative;
+  height: 96px;
+  margin-top: -2rem;
+}
+
+.separator__line {
+  border: none;
+  border-bottom: 1px solid var(--gray);
+  padding-top: calc(96px / 2);
+  border-color: var(--orange);
+}
+
+.separator__button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: var(--orange);
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color .3s ease-in-out;
+}
+
+.separator__button:hover {
+  background-color: #000;
+}
+
+/* result */
+.result__invalid {
+  color: #fd5050;
+  font-weight: bold;
+  font-size: 6rem;
+  line-height: 1;
+  display: none;
+}
+
+.result {
+  font-size: 103px;
+  font-weight: bold;
+  line-height: 1.1;
+  font-style: italic;
+}
+
+.result__value {
+  color: var(--orange);
+}
+
+
+/* mobile */
+@media screen and (max-width: 670px) {
+  .input-form{
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .separator{
+    margin-top: auto;
+    margin-bottom: 2rem;
+  }
+
+  .separator__button {
+    right: calc(50% - 96px / 2);
+  }
+
+  .result {
+    font-size: 13vmin;
+  }
+}
