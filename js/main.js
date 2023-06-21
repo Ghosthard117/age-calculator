@@ -70,10 +70,10 @@ Object.entries(dateDOMelements).forEach(([datePart, elements]) => {
     const isValid = validate.isValidPart(datePart)
 
     if (!isValid) {
-      elements.root.classList.add('input-form__box__error')
+      elements.root.classList.add('input-form__box--error')
       elements.message.textContent = `${capitalizeFirstCharacter(datePart)} is invalid`
     } else {
-      elements.root.classList.remove('input-form__box__error')
+      elements.root.classList.remove('input-form__box--error')
     }
 
     formButton.style.display = validate.allPartsAreValid ?
